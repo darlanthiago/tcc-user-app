@@ -1,0 +1,111 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginVertical: 15,
+  },
+  section: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginVertical: 20,
+  },
+  sectionText: {
+    fontSize: 18,
+    color: "#888",
+    fontWeight: "bold",
+  },
+  card: {
+    marginHorizontal: 4,
+    backgroundColor: "#fff",
+    paddingVertical: 30,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  searchBar: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#fff",
+    paddingVertical: 30,
+    paddingHorizontal: 8,
+    borderRadius: 8,
+    marginHorizontal: 4,
+  },
+  input: {
+    flex: 10,
+    backgroundColor: "#f5f3f3",
+    height: 45,
+    borderRadius: 8,
+    marginVertical: 4,
+    paddingHorizontal: 10,
+    margin: 4,
+  },
+  searchButton: {
+    flex: 1,
+    backgroundColor: "#5559c9",
+    height: 45,
+    borderRadius: 8,
+    marginVertical: 4,
+    paddingHorizontal: 10,
+    margin: 4,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  locationButton: {
+    flex: 1,
+    backgroundColor: "#f5f3f3",
+    height: 45,
+    borderRadius: 8,
+    marginVertical: 4,
+    paddingHorizontal: 10,
+    margin: 4,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  searchLocation: {
+    color: "#333",
+    fontWeight: "bold",
+    fontSize: 18,
+  },
+  searchLocationText: {
+    color: "#5559c9",
+  },
+  truckView: {
+    padding: 15,
+    backgroundColor: "#f5f3f3",
+    marginRight: 6,
+    marginTop: 15,
+    borderRadius: 8,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  truckContent: {
+    flex: 2,
+    marginRight: 10,
+  },
+  truckAction: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  truckTitleView: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  truckTitle: {
+    fontWeight: "bold",
+    fontSize: 14,
+    color: "#333",
+  },
+  truckEmail: {
+    marginTop: 6,
+    fontSize: 10,
+    color: "#575656",
+  },
+  truckDesc: {
+    marginTop: 12,
+    fontSize: 10,
+    color: "#575656",
+    fontStyle: "italic",
+  },
+});
