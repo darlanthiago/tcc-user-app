@@ -67,7 +67,7 @@ export const LoginScreen = () => {
         onChangeText={(text) => setLoginData({ ...loginData, password: text })}
         value={loginData.password}
         autoCapitalize="none"
-        keyboardType="visible-password"
+        keyboardType="default"
         secureTextEntry={true}
       />
 

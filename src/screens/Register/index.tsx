@@ -123,7 +123,7 @@ export const RegisterScreen = () => {
       <TextInput
         style={styles.input}
         placeholder="Digite a senha"
-        keyboardType="visible-password"
+        keyboardType="default"
         autoCapitalize="none"
         onChangeText={(text) => setNewTruck({ ...newTruck, password: text })}
         value={newTruck.password}

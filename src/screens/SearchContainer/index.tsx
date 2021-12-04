@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Alert, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, TextInput, TouchableOpacity, View, Permission, Platform } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import * as Location from "expo-location";
 
@@ -15,16 +15,19 @@ const SearchContainer: React.FC = () => {
 
   useEffect(() => {
     (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
 
-      setGrantedStatus(status === "granted" ? true : false);
+      let { status } = await Location.requestBackgroundPermissionsAsync();
 
       if (status !== "granted") {
         Alert.alert(
           "Ops!",
           "Para poder usar a localização precisa dar permissão"
         );
+
+        setGrantedStatus(false);
         return;
+      } else {
+        setGrantedStatus(true);
       }
     })();
   }, []);
@@ -32,7 +35,10 @@ const SearchContainer: React.FC = () => {
   const handleGetLocation = useCallback(async () => {
     setLoadingCoords(true);
 
-    let location = await Location.getCurrentPositionAsync();
+    let location = await Location.getCurrentPositionAsync({
+      accuracy: Location.Accuracy.Highest,
+      timeInterval: 10000
+    });
 
     const { latitude, longitude } = location.coords;
 
@@ -41,20 +47,21 @@ const SearchContainer: React.FC = () => {
       longitude,
     });
 
-    let fullAddressResponse = "";
+    let fullAddressResponse: string | null = "";
 
     for (let item of response) {
-      let address = `${item.city}`;
+
+      let address = item.city ? item.city : item.subregion;
+
       fullAddressResponse = address;
     }
 
     if (fullAddressResponse || fullAddressResponse !== null) {
       setAddress(fullAddressResponse);
+      searchTruck(fullAddressResponse);
     } else {
       setAddress("");
     }
-
-    searchTruck(fullAddressResponse);
 
     setLoadingCoords(false);
   }, []);

@@ -3761,7 +3761,7 @@ expo-localization@~10.2.0:
   dependencies:
     rtl-detect "^1.0.2"
 
-expo-location@^12.1.2:
+expo-location@~12.1.2:
   version "12.1.3"
   resolved "https://registry.yarnpkg.com/expo-location/-/expo-location-12.1.3.tgz#307963d02e017f1d217fdee2656b2944850540f5"
   integrity sha512-Sm/p79Ska4Ie8V2sG5eYECi1000nIm1wirxi/3yErVfZXsxE2KdEmlIN8kVCPqTDskYTol60hVKp/P2teNkyPA==
